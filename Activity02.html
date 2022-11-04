@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstractions</title>
+</head>
+<body>
+    <script>
+        // 1. create a function
+        // 2. create a function to display
+        // 3. create a constructor
+        // 4. create an object
+
+        function vehicle()
+        {
+            this.vehicletype="vehicletype";  
+        }
+        vehicle.prototype.display=function()
+        {
+            return "The brand is: "+this.vehicletype;
+        }
+
+        function MyCar(vehicletype)
+        {
+            this.vehicletype = vehicletype;
+        }
+
+        MyCar.prototype=Object.create(vehicle.prototype);
+        var myCar = new MyCar("Toyota");
+
+        alert(myCar.display());
+    </script>
+</body>
+</html>
